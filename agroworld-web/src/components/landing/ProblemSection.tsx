@@ -2,10 +2,22 @@
 import { motion } from "framer-motion";
 
 const problems = [
-  {icon:"&#128184;",title:"Gaspillage de pesticides",text:"Les agriculteurs appliquent souvent des doses maximales homologuees par precaution. Un traitement au bon stade vegetatif, aux conditions meteo optimales, permet de diviser les doses par 2 a 3 avec la meme efficacite."},
-  {icon:"&#127783;",title:"Irrigation mal pilotee",text:"Irriguer sans connaitre l humidite reelle du sol a 3 profondeurs, c est arroser soit trop tot, soit trop tard. 35% de l eau agricole est gaspillee faute de donnees terrain precises."},
-  {icon:"&#129748;",title:"Maladies detectees trop tard",text:"Le mildiou, la rouille, le botrytis : quand les symptomes sont visibles, il est souvent trop tard pour un traitement curatif efficace. L anticipation 48-72h change tout."},
-  {icon:"&#128203;",title:"Aucune memoire culturale",text:"Chaque saison, les decisions sont prises de memoire ou sur des carnets papier. Sans historique structure sol/meteo/interventions, impossible d optimiser d une saison a l autre."},
+  {
+    title:"Un gaspillage de produits qui n est pas une fatalite",
+    text:"Par precaution, la plupart des agriculteurs appliquent la dose maximale homologuee. Mais un traitement fongicide declenche au bon stade vegetatif, dans une fenetre meteo favorable, permet souvent de reduire les doses de 30 a 50% sans perdre en efficacite. Il manque simplement les donnees pour prendre cette decision en confiance."
+  },
+  {
+    title:"L irrigation a l aveugle",
+    text:"Irriguer sans connaitre l humidite reelle du sol a differentes profondeurs, c est arroser trop tot ou trop tard. Les consequences sont concretes : stress hydrique en periode critique, lixiviation des nutrients, consommation inutile d une ressource de plus en plus rare. Les outils existent. Ils ne sont juste pas encore accessibles."
+  },
+  {
+    title:"Les maladies, toujours detectees trop tard",
+    text:"Le mildiou, la rouille, le botrytis : quand les symptomes sont visibles a l oeil nu, il est generalement trop tard pour un traitement curatif efficace. L enjeu n est pas de reagir plus vite, c est d anticiper 48 a 72 heures a l avance, quand le traitement preventif est encore pleinement efficace."
+  },
+  {
+    title:"Une memoire culturale qui repart de zero chaque annee",
+    text:"Sans historique structure qui croise sol, meteo et interventions, chaque saison recommence de zero. Les decisions se prennent sur des impressions ou des carnets papier incomplets. Capitaliser sur ses propres donnees terrain devrait etre un droit, pas un luxe reserve aux grandes exploitations."
+  },
 ];
 
 export function ProblemSection() {
@@ -21,9 +33,9 @@ export function ProblemSection() {
           {problems.map((p,i) => (
             <motion.div key={p.title} initial={{opacity:0,y:30}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*0.1}}
               className="bg-[#1a6b5e]/08 backdrop-blur-sm border border-[#2a9d8f]/20 rounded-2xl p-6 hover:border-[#2a9d8f]/40 transition-all">
-              <div className="text-4xl mb-4" dangerouslySetInnerHTML={{__html:p.icon}} />
-              <h3 className="text-xl font-bold text-white mb-2">{p.title}</h3>
-              <p className="text-[#9acfd3] leading-relaxed">{p.text}</p>
+              <div className="w-8 h-[2px] bg-[#2a9d8f] mb-4 rounded-full" />
+              <h3 className="text-xl font-bold text-white mb-3">{p.title}</h3>
+              <p className="text-[#9acfd3] leading-relaxed text-sm">{p.text}</p>
             </motion.div>
           ))}
         </div>
