@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root { color-scheme: dark; }
+  html { scroll-behavior: smooth; }
+  ::selection { background: #2a9d8f44; }
+}
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #2a9d8f, #6ab8bf, #9acfd3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .glass {
+    background: rgba(26,107,94,0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(42,157,143,0.2);
+  }
+  .glow { box-shadow: 0 0 40px rgba(42,157,143,0.15); }
+}

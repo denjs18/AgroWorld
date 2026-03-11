@@ -1,0 +1,26 @@
+{
+  "expo": {
+    "name": "AgroWorld",
+    "slug": "agroworld",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "agroworld",
+    "userInterfaceStyle": "dark",
+    "splash": { "resizeMode": "contain", "backgroundColor": "#0d2b33" },
+    "android": {
+      "adaptiveIcon": { "backgroundColor": "#0d2b33" },
+      "permissions": ["NOTIFICATIONS", "ACCESS_FINE_LOCATION", "CAMERA", "RECORD_AUDIO"]
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.agroworld.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Pour photographier vos cultures",
+        "NSMicrophoneUsageDescription": "Pour saisie vocale du journal",
+        "NSLocationWhenInUseUsageDescription": "Pour géolocaliser vos parcelles"
+      }
+    },
+    "plugins": ["expo-router", "expo-notifications", "expo-location"]
+  }
+}
