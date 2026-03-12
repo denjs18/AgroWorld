@@ -258,7 +258,7 @@ export function runSimulation(
       weatherEvent: evtLabel,
     });
 
-    if (day >= crop.harvestDays && actions.some(a => a.type === "harvest" && a.day <= day)) break;
+    if (actions.some(a => a.type === "harvest" && a.day <= day)) break;
   }
 
   return days;

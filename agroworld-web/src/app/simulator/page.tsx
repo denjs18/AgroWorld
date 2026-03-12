@@ -223,8 +223,10 @@ function SimDashboard({ config, events, onReset }: {
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
-    setDays(runSimulation(config, events, actions));
-  }, [config, events, actions]);
+    const newDays = runSimulation(config, events, actions);
+  setDays(newDays);
+  setCurrent(c => Math.min(c, Math.max(0, newDays.length - 1)));
+}, [config, events, actions]);
 
   useEffect(() => {
     if (playing) {
